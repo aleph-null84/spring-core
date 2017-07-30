@@ -43,6 +43,14 @@ public class DrawingAppContext {
 		TrianglePointsApplicationContextAware trianglePointsApplicationContextAware 
 		  = (TrianglePointsApplicationContextAware) contextTrianglePointsApplicationContextAware.getBean("trianglePointsAppContextAware");
 		trianglePointsApplicationContextAware.draw();
+		
+		System.out.println("=== Triangle Points Bean Definition Inheritance ===");
+		ApplicationContext contextTrianglePointsApplicationBeanDefinitionInheritance
+		  = new ClassPathXmlApplicationContext("classpath:app-context-triangle-points-bean-definition-inheritance.xml");
+		
+		TrianglePointsApplicationBeanDefinitionInheritance trianglePointsApplicationBeanDefinitionInheritance
+		  = (TrianglePointsApplicationBeanDefinitionInheritance) contextTrianglePointsApplicationBeanDefinitionInheritance.getBean("trianglePointsBeanDefInh");
+		trianglePointsApplicationBeanDefinitionInheritance.draw();
 
 	}
 
