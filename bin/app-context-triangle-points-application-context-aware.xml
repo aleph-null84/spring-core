@@ -23,7 +23,7 @@
     
     <bean id="pointCbean" class="com.yuriy.sample.Point">
     	<property name="x" value="20" />
-    	<property name="y" value="020" />
+    	<property name="y" value="0" />
     </bean>    
    
     
