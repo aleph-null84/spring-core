@@ -35,6 +35,14 @@ public class DrawingAppContext {
 		TrianglePointsAutowiring trianglePointsAutowiring 
 		  = (TrianglePointsAutowiring) contextTrianglePointsAutowiring.getBean("trianglePointsAutowiring");
 		trianglePointsAutowiring.draw();
+		
+		System.out.println("=== Triangle Points Application Context Aware ===");
+		ApplicationContext contextTrianglePointsApplicationContextAware 
+		  = new ClassPathXmlApplicationContext("classpath:app-context-triangle-points-application-context-aware.xml");
+		
+		TrianglePointsApplicationContextAware trianglePointsApplicationContextAware 
+		  = (TrianglePointsApplicationContextAware) contextTrianglePointsApplicationContextAware.getBean("trianglePointsAppContextAware");
+		trianglePointsApplicationContextAware.draw();
 
 	}
 
