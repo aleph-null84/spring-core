@@ -55,7 +55,7 @@ public class DrawingAppContext {
 		
 		System.out.println("=== Triangle Points Lifecycle Callbacks ===");
 		AbstractApplicationContext contextTrianglePointsLifecycleCallbacks
-		  = new ClassPathXmlApplicationContext("classpath:app-context-triangle-points.xml");
+		  = new ClassPathXmlApplicationContext("classpath:app-context-triangle-points-lifecycle-callbacks.xml");
 		
 		contextTrianglePointsLifecycleCallbacks.registerShutdownHook();
 		

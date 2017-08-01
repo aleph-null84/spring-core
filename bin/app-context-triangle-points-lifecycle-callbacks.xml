@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="trianglePoints" class="com.yuriy.sample.TrianglePointsLifecycleCallbacks"
+          init-method="myInit"
+          destroy-method="myDestroy">
+    	<property name="pointA" ref="pointAbean" />
+    	<property name="pointB" ref="pointBbean" />
+    	<property name="pointC" ref="pointCbean" />
+    </bean>
+    
+    <bean id="pointAbean" class="com.yuriy.sample.Point">
+    	<property name="x" value="0" />
+    	<property name="y" value="0" />
+    </bean>
+    
+    <bean id="pointBbean" class="com.yuriy.sample.Point" name="point-b-name">
+    	<property name="x" value="0" />
+    	<property name="y" value="20" />
+    </bean>
+    
+    <bean id="pointCbean" class="com.yuriy.sample.Point">
+    	<property name="x" value="20" />
+    	<property name="y" value="0" />
+    </bean>
+    
+</beans>

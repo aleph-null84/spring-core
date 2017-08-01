@@ -1,8 +1,9 @@
 package com.yuriy.sample;
 
+import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 
-public class TrianglePointsLifecycleCallbacks implements InitializingBean {
+public class TrianglePointsLifecycleCallbacks implements InitializingBean, DisposableBean {
 	private Point pointA;
 	private Point pointB;
 	private Point pointC;	
@@ -34,6 +35,17 @@ public class TrianglePointsLifecycleCallbacks implements InitializingBean {
 	@Override
 	public void afterPropertiesSet() throws Exception {
 		System.out.println("InitializingBean init method called");		
+	}
+	@Override
+	public void destroy() throws Exception {
+		System.out.println("DisposableBean destroy method called");		
+	}
+	
+	public void myInit() throws Exception {
+		System.out.println("My init method called");		
+	}
+	public void myDestroy() throws Exception {
+		System.out.println("My destroy method called");		
 	}
 
 }
