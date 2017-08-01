@@ -1,6 +1,7 @@
 package com.yuriy.sample;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class DrawingAppContext {
@@ -51,6 +52,16 @@ public class DrawingAppContext {
 		TrianglePointsApplicationBeanDefinitionInheritance trianglePointsApplicationBeanDefinitionInheritance
 		  = (TrianglePointsApplicationBeanDefinitionInheritance) contextTrianglePointsApplicationBeanDefinitionInheritance.getBean("trianglePointsBeanDefInh");
 		trianglePointsApplicationBeanDefinitionInheritance.draw();
+		
+		System.out.println("=== Triangle Points Lifecycle Callbacks ===");
+		AbstractApplicationContext contextTrianglePointsLifecycleCallbacks
+		  = new ClassPathXmlApplicationContext("classpath:app-context-triangle-points.xml");
+		
+		contextTrianglePointsLifecycleCallbacks.registerShutdownHook();
+		
+		TrianglePointsLifecycleCallbacks trianglePointsLifecycleCallbacks
+		  = (TrianglePointsLifecycleCallbacks) contextTrianglePointsLifecycleCallbacks.getBean("trianglePoints");
+		trianglePointsLifecycleCallbacks.draw();
 
 	}
 
