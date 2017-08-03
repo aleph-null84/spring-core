@@ -12,8 +12,8 @@
     </bean>
     
     <bean id="pointAbean" class="com.yuriy.sample.Point">
-    	<property name="x" value="0" />
-    	<property name="y" value="0" />
+    	<property name="x" value="${pointA.X}" />
+    	<property name="y" value="${pointA.Y}" />
     </bean>
     
     <bean id="pointBbean" class="com.yuriy.sample.Point">
@@ -27,5 +27,11 @@
     </bean>
     
     <bean class="com.yuriy.sample.DisplayNameBeanPostProcessor" />
+    
+    <bean class="com.yuriy.sample.MyBeanFactoryPostProcessor" />
+    
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    	<property name="locations" value="classpath:pointsconfig.properties"/>
+    </bean>
     
 </beans>
