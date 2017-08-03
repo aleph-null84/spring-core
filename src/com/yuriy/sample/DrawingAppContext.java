@@ -62,6 +62,14 @@ public class DrawingAppContext {
 		TrianglePointsLifecycleCallbacks trianglePointsLifecycleCallbacks
 		  = (TrianglePointsLifecycleCallbacks) contextTrianglePointsLifecycleCallbacks.getBean("trianglePoints");
 		trianglePointsLifecycleCallbacks.draw();
+		
+		System.out.println("=== Triangle Points Baen Post Processor ===");
+		ApplicationContext contextTrianglePointsBeanPostProcessor
+		  = new ClassPathXmlApplicationContext("classpath:app-context-triangle-points-bean-post-processor.xml");
+		
+		TrianglePoints trianglePointsBeanPostProcessor
+		  = (TrianglePoints) contextTrianglePointsBeanPostProcessor.getBean("trianglePointsBeanPostProcessor");
+		trianglePointsBeanPostProcessor.draw();
 
 	}
 
