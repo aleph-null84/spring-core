@@ -70,6 +70,14 @@ public class DrawingAppContext {
 		TrianglePoints trianglePointsBeanPostProcessor
 		  = (TrianglePoints) contextTrianglePointsBeanPostProcessor.getBean("trianglePointsBeanPostProcessor");
 		trianglePointsBeanPostProcessor.draw();
+		
+		System.out.println("=== Shape Interface ===");
+		ApplicationContext contextShapePoints = new ClassPathXmlApplicationContext("classpath:app-context-triangle-points.xml");
+		
+		Shape shape = (Shape) contextTrianglePoints.getBean("trianglePoints");
+		shape.draw();
+		shape = (Shape) contextTrianglePoints.getBean("circlePoints");
+		shape.draw();
 
 	}
 

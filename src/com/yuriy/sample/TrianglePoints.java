@@ -1,6 +1,6 @@
 package com.yuriy.sample;
 
-public class TrianglePoints {
+public class TrianglePoints implements Shape {
 	private Point pointA;
 	private Point pointB;
 	private Point pointC;	
@@ -25,6 +25,7 @@ public class TrianglePoints {
 	}
 	
 	public void draw() {
+		System.out.println("Drawing triangle");
 		System.out.println("Point A = (" + getPointA().getX() + "; " + getPointA().getY() + ")");
 		System.out.println("Point B = (" + getPointB().getX() + "; " + getPointB().getY() + ")");
 		System.out.println("Point C = (" + getPointC().getX() + "; " + getPointC().getY() + ")");

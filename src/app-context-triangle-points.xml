@@ -16,6 +16,11 @@
     	</property>
     </bean>
     
+    <bean id="circlePoints" class="com.yuriy.sample.CirclePoints">
+    	<property name="center" ref="pointAbean" />
+    	<property name="radius" value="10" />
+    </bean>
+    
     <bean id="pointAbean" class="com.yuriy.sample.Point">
     	<property name="x" value="0" />
     	<property name="y" value="0" />
